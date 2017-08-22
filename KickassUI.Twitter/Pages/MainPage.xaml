@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Startpagina"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    x:Class="KickassUI.Twitter.Pages.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="tweet-compose.png" />
+    </ContentPage.ToolbarItems>
+	<ContentPage.Content>
+        <ListView ItemsSource="{Binding Tweets}" SeparatorColor="#d2d3d5" HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid RowSpacing="0" ColumnSpacing="0" Padding="0,10,5,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <ffimageloading:CachedImage Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Margin="10,0,10,0" VerticalOptions="Start" HorizontalOptions="Center" DownsampleToViewSize="true"
+                                Aspect="AspectFit" HeightRequest="70" WidthRequest="70" Source="{Binding UserImageUrl}">
+                                <ffimageloading:CachedImage.Transformations>
+                                    <fftransformations:CircleTransformation/>
+                                </ffimageloading:CachedImage.Transformations>
+                            </ffimageloading:CachedImage>
+
+                            <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                                <Label FontSize="15" FontAttributes="Bold" Text="{Binding UserFullName}" />
+                                <Label FontSize="15" TextColor="#6d747a" Text="{Binding Username}" />
+                                <Label FontSize="8" TextColor="#6d747a" Margin="0,0,0,0" Text="•" VerticalTextAlignment="Center" />
+                                <Label FontSize="15" TextColor="#6d747a" Text="{Binding PostDate}" />
+                                <Label FontFamily="FontAwesome" TextColor="#6d747a" Text="&#xf107;" />
+                            </StackLayout>
+                            <Grid Grid.Row="1" Grid.Column="1" Margin="0,5,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" FontSize="15" Text="{Binding TweetText}" />
+
+                                <ffimageloading:CachedImage Grid.Row="1" HeightRequest="160" HorizontalOptions="StartAndExpand" Margin="0,10,0,10" Source="{Binding TweetImageAttachmentUrl}">
+                                    <ffimageloading:CachedImage.Transformations>
+                                        <fftransformations:CornersTransformation BottomLeftCornerSize="5" TopLeftCornerSize="5" BottomRightCornerSize="5" TopRightCornerSize="5" CornersTransformType="AllRounded" />
+                                    </ffimageloading:CachedImage.Transformations>
+                                </ffimageloading:CachedImage>
+                            </Grid>
+                            <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                                <Image Margin="0,10,50,0" HeightRequest="20" WidthRequest="20" Source="icon-comment.png" />
+                                <Image Margin="0,10,50,0" HeightRequest="20" WidthRequest="20" Source="icon-retweet.png" />
+                                <Image Margin="0,10,50,0" HeightRequest="20" WidthRequest="20" Source="icon-heart.png" />
+                                <Image Margin="0,10,0,0" HeightRequest="20" WidthRequest="20" Source="icon-dm.png" />
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+	</ContentPage.Content>
+</ContentPage>
