@@ -1,6 +1,51 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="KickassUI.Twitter.App">
 	<Application.Resources>
 		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+
+            <!-- Styles for common elements -->
+            <Style TargetType="Label">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                      <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.iOS>HelveticaNeue</OnPlatform.iOS>
+                        <OnPlatform.Android>Roboto-Regular.ttf#Roboto</OnPlatform.Android>
+                      </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+             <Style TargetType="Label" x:Key="BoldLabel">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                      <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.iOS>HelveticaNeue-Bold</OnPlatform.iOS>
+                        <OnPlatform.Android>Roboto-Bold.ttf#Roboto Bold</OnPlatform.Android>
+                      </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
+            <Style TargetType="Label" x:Key="FALabel">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                      <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.iOS>FontAwesome</OnPlatform.iOS>
+                        <OnPlatform.Android>fontawesome.ttf#FontAwesome</OnPlatform.Android>
+                      </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="AddButtonStyleAndroid" TargetType="RelativeLayout">
+                <Setter Property="RelativeLayout.HeightConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=60}"/>
+                <Setter Property="RelativeLayout.WidthConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=60}"/>
+                <Setter Property="RelativeLayout.YConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.20,Constant=0}"/>
+                <Setter Property="RelativeLayout.XConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.26, Constant=0}"/>
+            </Style>
+            
+        </ResourceDictionary>
 	</Application.Resources>
 </Application>

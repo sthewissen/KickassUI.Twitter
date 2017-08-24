@@ -1,5 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage Icon="devnl.png" Title="Menu" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="KickassUI.Twitter.Pages.MenuPage">
+<ContentPage Icon="devnl.png" Title="Menu" 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    x:Class="KickassUI.Twitter.Pages.MenuPage">
 	<ContentPage.Content>
+        <Grid Padding="25,40,25,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" Padding="0,0,0,30">
+                <StackLayout Orientation="Horizontal">
+                     <ffimageloading:CachedImage VerticalOptions="Start" HorizontalOptions="Start" DownsampleToViewSize="true"
+                        Aspect="AspectFit" HeightRequest="50" WidthRequest="50" Source="devnl.png">
+                        <ffimageloading:CachedImage.Transformations>
+                            <fftransformations:CircleTransformation/>
+                        </ffimageloading:CachedImage.Transformations>
+                    </ffimageloading:CachedImage>
+                    <Label Style="{StaticResource FALabel}" FontSize="20" TextColor="#1fa3f5"  Text="&#xf141;" HorizontalOptions="EndAndExpand">
+                        <Label.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="Android" Value="false"/>
+                                <On Platform="iOS" Value="true"/>
+                            </OnPlatform>
+                        </Label.IsVisible>
+                    </Label>
+                </StackLayout>
+                <Label Text="Steven Thewissen" TextColor="#000000" Style="{StaticResource BoldLabel}" FontSize="18" />
+                <Label Text="@devnl" TextColor="#6d747a" FontSize="14" />
+                <StackLayout Margin="0,10,0,0" Orientation="Horizontal">
+                    <Label Text="131" TextColor="#000000" Style="{StaticResource BoldLabel}" FontSize="14" />
+                    <Label Text="Volgend" TextColor="#6d747a" FontSize="14" />
+                    <Label Text="162" TextColor="#000000" Style="{StaticResource BoldLabel}" FontSize="14" />
+                    <Label Text="Volgers" TextColor="#6d747a" FontSize="14" />
+                </StackLayout>
+            </StackLayout>
+
+            <ListView RowHeight="50" Grid.Row="1" ItemsSource="{Binding MenuItems}" HasUnevenRows="true" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,30">
+                                <Label WidthRequest="25" VerticalTextAlignment="Center" VerticalOptions="Center" FontSize="18" Text="{Binding Icon}" Margin="0,0,10,0" Style="{StaticResource FALabel}" TextColor="#6d747a" />
+                                <Label VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="#000000" FontSize="18" Text="{Binding Text}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <StackLayout Grid.Row="2" Orientation="Horizontal">
+                <Label Style="{StaticResource FALabel}" FontSize="20" TextColor="#1fa3f5" Text="&#xf186;" HorizontalOptions="Start">
+                    <Label.IsVisible>
+                        <OnPlatform x:TypeArguments="x:Boolean">
+                            <On Platform="Android" Value="false"/>
+                            <On Platform="iOS" Value="true"/>
+                        </OnPlatform>
+                    </Label.IsVisible>
+                </Label>
+                <Label Style="{StaticResource FALabel}" FontSize="20" TextColor="#1fa3f5" Text="&#xf029;" HorizontalOptions="EndAndExpand">
+                    <Label.IsVisible>
+                        <OnPlatform x:TypeArguments="x:Boolean">
+                            <On Platform="Android" Value="false"/>
+                            <On Platform="iOS" Value="true"/>
+                        </OnPlatform>
+                    </Label.IsVisible>
+                </Label>
+            </StackLayout>
+        </Grid>
 	</ContentPage.Content>
 </ContentPage>

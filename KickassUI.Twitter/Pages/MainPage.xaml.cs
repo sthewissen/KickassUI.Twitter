@@ -10,6 +10,14 @@ namespace KickassUI.Twitter.Pages
         public MainPage()
         {
             InitializeComponent();
+
+            // Don't need toolbar items here.
+            switch (Device.RuntimePlatform)
+            {
+                case Device.Android:
+                    this.ToolbarItems.Clear();
+                    break;
+            }
         }
     }
 }

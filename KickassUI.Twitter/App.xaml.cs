@@ -18,10 +18,10 @@ namespace KickassUI.Twitter
             masterDetailsMultiple.Master = menuPage;
 
             var container = new FreshTabbedNavigationContainer();
-            container.AddTab<MainPageModel>("Main page", "icon-home.png", null);
-            container.AddTab<MainPageModel>("Main page", "icon-search.png", null);
-            container.AddTab<MainPageModel>("Main page", "icon-bell.png", null);
-            container.AddTab<MainPageModel>("Main page", "icon-dm.png", null);
+            container.AddTab<MainPageModel>("", "icon_home.png", null);
+            container.AddTab<MainPageModel>("", "icon_search.png", null);
+            container.AddTab<MainPageModel>("", "icon_bell.png", null);
+            container.AddTab<MainPageModel>("", "icon_dm.png", null);
 
             masterDetailsMultiple.Detail = container;
 

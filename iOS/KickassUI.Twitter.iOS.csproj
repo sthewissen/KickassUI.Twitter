@@ -117,6 +117,24 @@
     <Reference Include="FFImageLoading.Forms.Touch">
       <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.9\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
     </Reference>
+    <Reference Include="NGraphics">
+      <HintPath>..\packages\NGraphics.0.4.0\lib\Xamarin.iOS10\NGraphics.dll</HintPath>
+    </Reference>
+    <Reference Include="NGraphics.iOS">
+      <HintPath>..\packages\NGraphics.0.4.0\lib\Xamarin.iOS10\NGraphics.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="NControl">
+      <HintPath>..\packages\NControl.0.9.1.0\lib\Xamarin.iOS10\NControl.dll</HintPath>
+    </Reference>
+    <Reference Include="NControl.iOS">
+      <HintPath>..\packages\NControl.0.9.1.0\lib\Xamarin.iOS10\NControl.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="NControl.Controls">
+      <HintPath>..\packages\NControl.Controls.0.9.4.1\lib\Xamarin.iOS10\NControl.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="NControl.Controls.iOS">
+      <HintPath>..\packages\NControl.Controls.0.9.4.1\lib\Xamarin.iOS10\NControl.Controls.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KickassUI.Twitter\KickassUI.Twitter.csproj">
@@ -148,22 +166,22 @@
     <Compile Include="Renderers\UntintedNavigationPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\icon-bell%403x.png" />
-    <BundleResource Include="Resources\icon-comment.png" />
-    <BundleResource Include="Resources\icon-dm%403x.png" />
-    <BundleResource Include="Resources\icon-heart.png" />
-    <BundleResource Include="Resources\icon-home%403x.png" />
-    <BundleResource Include="Resources\icon-retweet.png" />
-    <BundleResource Include="Resources\icon-search%403x.png" />
-    <BundleResource Include="Resources\tweet-compose%402x.png" />
-    <BundleResource Include="Resources\tweet-compose%403x.png" />
+    <BundleResource Include="Resources\icon_bell%403x.png" />
+    <BundleResource Include="Resources\icon_comment.png" />
+    <BundleResource Include="Resources\icon_dm%403x.png" />
+    <BundleResource Include="Resources\icon_heart.png" />
+    <BundleResource Include="Resources\icon_home%403x.png" />
+    <BundleResource Include="Resources\icon_retweet.png" />
+    <BundleResource Include="Resources\icon_search%403x.png" />
+    <BundleResource Include="Resources\tweet_compose%402x.png" />
+    <BundleResource Include="Resources\tweet_compose%403x.png" />
     <BundleResource Include="Resources\Fonts\fontawesome.ttf" />
-    <BundleResource Include="Resources\icon-bell%402x.png" />
-    <BundleResource Include="Resources\icon-dm%402x.png" />
-    <BundleResource Include="Resources\icon-home%402x.png" />
-    <BundleResource Include="Resources\icon-search%402x.png" />
-    <BundleResource Include="Resources\icon-home_selected%402x.png" />
-    <BundleResource Include="Resources\icon-home_selected%403x.png" />
+    <BundleResource Include="Resources\icon_bell%402x.png" />
+    <BundleResource Include="Resources\icon_dm%402x.png" />
+    <BundleResource Include="Resources\icon_home%402x.png" />
+    <BundleResource Include="Resources\icon_search%402x.png" />
+    <BundleResource Include="Resources\icon_home_selected%402x.png" />
+    <BundleResource Include="Resources\icon_home_selected%403x.png" />
     <BundleResource Include="Resources\devnl%402x.png" />
     <BundleResource Include="Resources\devnl%403x.png" />
   </ItemGroup>
