@@ -9,3 +9,4 @@ A Xamarin.Forms version of the Twitter app to prove you can create goodlooking U
 ## The end result
 On the left hand side we have the actual app, on the right hand side the Xamarin Forms version:
 
+<img src="https://github.com/sthewissen/KickassUI.Twitter/blob/master/images/comparison1.png" width="600" />
